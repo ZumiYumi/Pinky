@@ -58,6 +58,7 @@ namespace PinDialogDemo
             FormBorderStyle = FormBorderStyle.FixedDialog;
             StartPosition = FormStartPosition.CenterScreen;
             ClientSize = new Size(455, 235);
+            BackColor = Color.FromArgb(242, 242, 242);
             MaximizeBox = false;
             MinimizeBox = false;
 
@@ -89,7 +90,7 @@ namespace PinDialogDemo
 
             _txtPin = new TextBox
             {
-                Location = new Point(80 + _lblPrompt.PreferredWidth + 6, 76),
+                Location = new Point(80 + _lblPrompt.PreferredWidth + 6, 76 + 20),
                 Width = 300,
                 Height = 20,
                 UseSystemPasswordChar = true
@@ -131,7 +132,8 @@ namespace PinDialogDemo
                 Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point),
                 DialogResult = DialogResult.OK,
                 Location = new Point(20, 185),
-                Size = new Size(205, 35)
+                Size = new Size(205, 35),
+                BackColor = Color.FromArgb(205, 205, 205)
             };
             Controls.Add(_btnOk);
 
@@ -141,7 +143,8 @@ namespace PinDialogDemo
                 Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point),
                 DialogResult = DialogResult.Cancel,
                 Location = new Point(228, 185),
-                Size = new Size(205, 35)
+                Size = new Size(205, 35),
+                BackColor = Color.FromArgb(205, 205, 205)
             };
             Controls.Add(_btnCancel);
 
